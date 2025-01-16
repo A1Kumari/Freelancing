@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+    padding: 40px 20px;
+    max-width: 80%;
+    margin: auto;
+    position: relative;
+  }
+  
+  .verticalText {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+    position: absolute;
+    left: -50px;
+    top: 50px;
+    transform: rotate(180deg);
+    font-size: 4rem;
+      color: #3D52A0;
+  }
+  .highlight {
+    color: #7091E6;
+  }
+  
+  
+  .section {
+    margin-left: 50px;
+    padding: 30px;
+  }
+  
+  
+  
+  .description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  
+  /* Styling for the subheading */
+  .subheading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3D52A0; /* Dark purple color */
+    text-align: center;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+  }
+  .achievementList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+  }
+  
+  /* Styling for each list item */
+  .achievementList li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #EDE8F5; /* Light text color for contrast */
+    background-color: #92A4E0; /* Primary color */
+    padding: 1rem 2rem;
+    width: 12rem;
+    height: 100px;
+    border-radius: 8px;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content inside each item */
+    text-align: center; /* Center text inside each item */
+    box-shadow: 
+      rgba(112, 145, 230, 0.4) -5px 5px,
+      rgba(112, 145, 230, 0.3) -10px 10px,
+      rgba(112, 145, 230, 0.2) -15px 15px,
+      rgba(112, 145, 230, 0.1) -20px 20px,
+      rgba(112, 145, 230, 0.05) -25px 25px; /* Multi-layered shadow using secondary color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hover effect for each list item */
+  .achievementList li:hover {
+    transform: scale(1.05); /* Slightly enlarge the item */
+    box-shadow: 
+      rgba(112, 145, 230, 0.6) -5px 5px,
+      rgba(112, 145, 230, 0.5) -10px 10px,
+      rgba(112, 145, 230, 0.4) -15px 15px,
+      rgba(112, 145, 230, 0.3) -20px 20px,
+      rgba(112, 145, 230, 0.2) -25px 25px; /* Enhance shadow on hover */
+    background-color: #2E3D7F; /* Darken primary color on hover */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .subheading {
+      font-size: 2rem;
+    }
+    
+    .achievementList {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .achievementList li {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+      width: 80%; /* Full width on smaller screens */
+    }
+  }
+  

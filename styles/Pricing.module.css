@@ -1,0 +1,121 @@
+
+.pricingContainer {
+    margin: 80px;
+    text-align: center;
+    color: #333;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  .mainHeading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #3D52A0;
+  }
+  
+  .gridContainer {
+    display: flex;
+  
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .pricingBox {
+    background: #F7F4FD; /* Light purple background */
+    margin: 80px;
+    box-shadow: 
+      rgba(112, 145, 230, 0.4) -5px 5px,
+      rgba(112, 145, 230, 0.3) -10px 10px,
+      rgba(112, 145, 230, 0.2) -15px 15px,
+      rgba(112, 145, 230, 0.1) -20px 20px,
+      rgba(112, 145, 230, 0.05) -25px 25px;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 300px;
+    
+    transform: translateZ(0);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .pricingBox:hover {
+    transform: scale(1.05);
+    box-shadow: 
+      rgba(112, 145, 230, 0.6) -5px 5px,
+      rgba(112, 145, 230, 0.5) -10px 10px,
+      rgba(112, 145, 230, 0.4) -15px 15px,
+      rgba(112, 145, 230, 0.3) -20px 20px,
+      rgba(112, 145, 230, 0.2) -25px 25px;
+  }
+  
+  .planTitle {
+    font-size: 1.75rem;
+    color: #3D52A0;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .planPrice {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3D52A0; /* Main color */
+    margin-bottom: 5rem;
+    position: absolute;
+    top: -3rem;
+    left: -2rem;
+    transform: rotate(-10deg);
+  }
+  
+  
+  .planFeatures {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .planFeatures li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5; /* Adjust line height for better readability */
+    display: flex;
+    align-items: center;
+  }
+  
+  .planFeatures li::before {
+    content: '✓'; /* Unicode character for a check mark */
+    color: #28a745; /* Green color for the tick */
+    margin-right: 0.5rem; /* Space between tick and text */
+    font-size: 1.2rem; /* Adjust tick size */
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .pricingContainer {
+      padding: 2rem 1rem;
+    }
+  
+    .pricingBox {
+      width: 100%;
+    }
+  
+    .mainHeading {
+      font-size: 2rem;
+    }
+  }
+  

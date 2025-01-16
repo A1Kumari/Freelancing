@@ -1,0 +1,103 @@
+.container {
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 15px; /* Rounded borders */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    height: 90vh;
+    width: 90%;
+   /* Center content vertically */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    transition: transform 0.1s ease; /* Smooth transition for the tilt effect */
+    transform-style: preserve-3d;
+    overflow: hidden; /* Ensure no unwanted scrollbars */
+    position: relative; /* For positioning child elements like glitter effect */
+  }
+  
+  /* Glitter Effect */
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #3D52A0, #7091E6, #8697C4, #ADBBDA, #EDE8F5);
+    background-size: 400% 400%;
+    animation: glitter 5s ease infinite;
+    opacity: 0.5;
+    z-index: 1; /* Make sure this layer is under the main content */
+  }
+  
+  /* Keyframes for glitter effect */
+  @keyframes glitter {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+  
+  .blueSection {
+    color: #fff;
+    width: 100%;
+    padding: 50px 20px;
+     /* For positioning child elements like arrow button */
+  }
+  
+  .introContent {
+  
+    margin-top: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  
+  }
+  
+  .coolHeading {
+    color: #3D52A0;
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .highlight {
+    font-size: 5rem;
+    color: #7091E6;
+  }
+  .introText {
+    color: #3D52A0;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .imagesSection {
+    margin-top: -100px;
+    float: right;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+ 
+  @keyframes down {
+    0% {
+      transform: translate(-50%, 0) rotate(-45deg);
+    }
+    20% {
+      transform: translate(-50%, 15px) rotate(-45deg);
+    }
+    40% {
+      transform: translate(-50%, 0) rotate(-45deg);
+    }
+  }
+  
+
+  .revealContent {
+    margin-top: 20px;
+    padding: 20px;
+    background: #2c3e50; /* Darker background for the revealed content */
+    color: #fff;
+    border-radius: 8px;
+    z-index: 3; /* Ensure the revealed content is above other elements */
+  }
+  

@@ -1,0 +1,69 @@
+/* styles/Services.module.css */
+
+/* Container styling */
+.servicesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Individual service box styling */
+  .serviceBox {
+    position: relative;
+    width: 350px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .serviceBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Title and description styling */
+  .serviceBox h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .serviceBox p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-family: "Lato", sans-serif;
+  }
+  
+  /* Bottom border animation */
+  .bottomBorder {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #556ee6; /* Primary color */
+    transition: width 0.3s ease;
+  }
+  
+  .serviceBox:hover .bottomBorder {
+    width: 80%; /* Border expands on hover */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .servicesContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
