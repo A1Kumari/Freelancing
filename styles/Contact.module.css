@@ -1,19 +1,22 @@
-.formContainer {
+.container {
     backdrop-filter: blur(10px); /* Blur effect */
     border-radius: 15px; /* Rounded borders */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    height: 90vh;
-    width: 90%;
-   /* Center content vertically */
+    height: auto;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
     transition: transform 0.1s ease; /* Smooth transition for the tilt effect */
     transform-style: preserve-3d;
     overflow: hidden; /* Ensure no unwanted scrollbars */
-    position: relative; 
-  }
-  .container::before {
+    position: relative; /* For positioning child elements like glitter effect */
+    padding: 40px; /* Added padding for content spacing */
+    color: #3D52A0; /* Consistent color scheme */
+}
+
+/* Glitter Effect */
+.container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -25,54 +28,83 @@
     animation: glitter 5s ease infinite;
     opacity: 0.5;
     z-index: 1; /* Make sure this layer is under the main content */
-  }
-  
-  /* Keyframes for glitter effect */
-  @keyframes glitter {
+}
+
+/* Keyframes for glitter effect */
+@keyframes glitter {
     0% { background-position: 0% 0%; }
     50% { background-position: 100% 100%; }
     100% { background-position: 0% 0%; }
-  }
-  
-  .heading {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-  }
-  
+}
 
- 
-  
-  .submitButton {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background: #0070f3;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .submitButton:hover {
-    background: #005bb5;
-  }
-  
-  .statusMessage {
-    margin-top: 15px;
+.heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #7091E6;
     text-align: center;
-    color: #28a745;
-  }
-  
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 2;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* input,
+textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+} */
+
+.submitButton {
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3D52A0;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #5C72C7;
+}
+
+.statusMessage {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #3D52A0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        height: auto;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+}
