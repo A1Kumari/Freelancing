@@ -1,117 +1,172 @@
+/* About.module.css */
 .container {
-    display: flex;
-    padding: 40px 20px;
-    max-width: 80%;
-    margin: auto;
-    position: relative;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Vertical Section */
+.verticalSection {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  background: #f7F4FD;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+}
+
+.verticalText {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #3d52a0;
+  text-align: center;
+}
+
+/* Main Title */
+.mainTitle {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #2e3d7f;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+
+/* About Content */
+.aboutContent {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: #f7F4FD;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+
+/* Skills & Achievements Sections */
+.skillsSection, .achievementsSection {
+  background: #f7F4FD;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.skillsSection {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.achievementsSection {
+  grid-column: 2 / -1;
+  grid-row: 3 / 4;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #2e3d7f;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Achievement List */
+.achievementList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.achievementList li {
+  background: #7091e6;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(112, 145, 230, 0.3);
+}
+
+.achievementList li:hover {
+  transform: translateY(-5px);
+  background: #5a7acb;
+}
+
+.highlight {
+  color: #7091e6;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
-  
-  .verticalText {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-weight: bold;
-    position: absolute;
-    left: -50px;
-    top: 50px;
-    transform: rotate(180deg);
-    font-size: 4rem;
-      color: #3D52A0;
-  }
-  .highlight {
-    color: #7091E6;
-  }
-  
-  
-  .section {
-    margin-left: 50px;
-    padding: 30px;
-  }
-  
-  
-  
-  .description {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  
-  
-  
-  /* Styling for the subheading */
-  .subheading {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #3D52A0; /* Dark purple color */
+
+  .verticalSection {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 1rem;
     text-align: center;
-    margin-bottom: 2rem;
-    justify-content: space-between;
   }
-  .achievementList {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+
+  .mainTitle {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    font-size: 2.5rem;
   }
-  
-  /* Styling for each list item */
+
+  .aboutContent {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+
+  .skillsSection {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+  }
+
+  .achievementsSection {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .verticalText {
+    font-size: 2rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
   .achievementList li {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #EDE8F5; /* Light text color for contrast */
-    background-color: #92A4E0; /* Primary color */
-    padding: 1rem 2rem;
-    width: 12rem;
-    height: 100px;
-    border-radius: 8px;
-    margin: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center content inside each item */
-    text-align: center; /* Center text inside each item */
-    box-shadow: 
-      rgba(112, 145, 230, 0.4) -5px 5px,
-      rgba(112, 145, 230, 0.3) -10px 10px,
-      rgba(112, 145, 230, 0.2) -15px 15px,
-      rgba(112, 145, 230, 0.1) -20px 20px,
-      rgba(112, 145, 230, 0.05) -25px 25px; /* Multi-layered shadow using secondary color */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    font-size: 1rem;
+    padding: 1rem;
   }
-  
-  /* Hover effect for each list item */
-  .achievementList li:hover {
-    transform: scale(1.05); /* Slightly enlarge the item */
-    box-shadow: 
-      rgba(112, 145, 230, 0.6) -5px 5px,
-      rgba(112, 145, 230, 0.5) -10px 10px,
-      rgba(112, 145, 230, 0.4) -15px 15px,
-      rgba(112, 145, 230, 0.3) -20px 20px,
-      rgba(112, 145, 230, 0.2) -25px 25px; /* Enhance shadow on hover */
-    background-color: #2E3D7F; /* Darken primary color on hover */
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .subheading {
-      font-size: 2rem;
-    }
-    
-    .achievementList {
-      flex-direction: column; /* Stack items vertically on smaller screens */
-    }
-  
-    .achievementList li {
-      font-size: 1rem;
-      padding: 0.8rem 1.5rem;
-      width: 80%; /* Full width on smaller screens */
-    }
-  }
-  
+}

@@ -1,110 +1,113 @@
 .container {
-    backdrop-filter: blur(10px); /* Blur effect */
-    border-radius: 15px; /* Rounded borders */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    height: auto;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
-    transition: transform 0.1s ease; /* Smooth transition for the tilt effect */
-    transform-style: preserve-3d;
-    overflow: hidden; /* Ensure no unwanted scrollbars */
-    position: relative; /* For positioning child elements like glitter effect */
-    padding: 40px; /* Added padding for content spacing */
-    color: #3D52A0; /* Consistent color scheme */
-}
-
-/* Glitter Effect */
-.container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #3D52A0, #7091E6, #8697C4, #ADBBDA, #EDE8F5);
-    background-size: 400% 400%;
-    animation: glitter 5s ease infinite;
-    opacity: 0.5;
-    z-index: 1; /* Make sure this layer is under the main content */
-}
-
-/* Keyframes for glitter effect */
-@keyframes glitter {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
-.heading {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #7091E6;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    background: linear-gradient(145deg, #3d52a0, #7091e6);
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .infoContainer {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    z-index: 2;
-}
-
-.form {
+  }
+  
+  .infoContainer p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .infoContainer a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .formContainer {
+    flex: 1;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .formHeading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    z-index: 2;
-}
-
-.formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* input,
-textarea {
+    gap: 15px;
+  }
+  
+  .formGroup label {
+    font-size: 1rem;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
     padding: 10px;
     border-radius: 8px;
     border: none;
     outline: none;
     font-size: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-textarea {
-    resize: none;
-    height: 100px;
-} */
-
-.submitButton {
-    padding: 15px;
-    border-radius: 8px;
-    border: none;
-    background-color: #3D52A0;
+    margin-top: 5px;
+  }
+  
+  
+  
+  .statusMessage {
+    margin-top: 15px;
+    font-size: 1rem;
+  }
+  
+  .submitButton {
+    background: linear-gradient(45deg, #3D52A0, #7091E6);
     color: white;
-    font-size: 1.2rem;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submitButton:hover {
-    background-color: #5C72C7;
-}
-
-.statusMessage {
-    text-align: center;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
     margin-top: 20px;
-    font-size: 1.1rem;
-    color: #3D52A0;
-}
+  }
+  
+  .submitButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #8697C4, #3D52A0);
+    transition: left 0.4s ease-in-out;
+    border-radius: 25px;
+    z-index: -1;
+  }
+  
+  .submitButton:hover::before {
+    left: 0;
+  }
+  
+  .submitButton:hover {
+    transform: scale(1.05);
+    color: #fff;
+  }
+  
 
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        height: auto;
-        margin-top: 20px;
-        padding: 20px;
-    }
-
-    .heading {
-        font-size: 2.5rem;
-    }
-}
+  

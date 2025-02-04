@@ -1,49 +1,60 @@
 import React from 'react';
 import styles from '../styles/About.module.css';
 
-export default function About() {
+const About = () => {
   return (
-    <>
     <div className={styles.container}>
-      <div className={styles.verticalText}>
-        About <span className={styles.highlight}>MasterPiece</span>
-      </div>
+      <div className={styles.parent}>
+        {/* Vertical Text Section */}
+        <div className={styles.verticalSection}>
+          <div className={styles.verticalText}>
+            Hire<span className={styles.highlight}>Sync</span> Services
+          </div>
+        </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.subheading}>About Me</h2>
-        <p className={styles.description}>
-          👋 Hello, I'm <span className={styles.highlight}>[Your Name]</span>! I'm a Full-Stack Developer specializing in the MERN stack. My journey into tech began with a deep curiosity and passion for creating innovative solutions. With a strong background in Computer Science, I've worked on a variety of projects, from small business websites to complex web applications.
-        </p>
-        <p className={styles.description}>
-          My goal is to empower businesses by delivering solutions that enhance user experience and streamline operations. I'm dedicated to continuous learning and keeping up with the latest tech trends. I prioritize client satisfaction through clear communication and delivering on my promises.
-        </p>
-        <p className={styles.description}>
-          My core values include integrity, quality, innovation, and collaboration. Outside of work, I'm a gamer and a music enthusiast, enjoying <span className={styles.highlight}>[instrument]</span> and various genres. I also love hiking and exploring nature.
-        </p>
-        <p className={styles.description}>
-          Let's connect! I'm always open to new opportunities and collaborations. Find me on <span className={styles.highlight}>LinkedIn, GitHub,</span> or <span className={styles.highlight}>Twitter</span>.
-        </p>
-      </div>
+        {/* Main Title */}
+        <div className={styles.mainTitle}>
+          About <span className={styles.highlight}>US</span>
+        </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.subheading}>Tech Stack Expertise</h2>
-        <ul className={styles.techList}>
-          <li><span className={styles.highlight}>Frontend:</span> React, Next.js, HTML5, CSS3, JavaScript</li>
-          <li><span className={styles.highlight}>Backend:</span> Node.js, Express, MongoDB, MySQL</li>
-          <li><span className={styles.highlight}>DevOps:</span> Docker, AWS, Heroku, CI/CD</li>
-          <li><span className={styles.highlight}>APIs:</span> REST, GraphQL</li>
-          <li><span className={styles.highlight}>Design Tools:</span> Figma, Adobe XD, Sketch</li>
-          <li><span className={styles.highlight}>Machine Learning:</span> Python, TensorFlow, scikit-learn</li>
-        </ul>
-      </div>
+        {/* About Content */}
+        <div className={styles.aboutContent}>
+          <p className={styles.description}>
+            👋 Welcome to <span className={styles.highlight}>HireSync</span>, where passion meets innovation! 
+            I'm a skilled developer specializing in the MERN stack, ready to tackle projects of any scale.
+          </p>
+          <p className={styles.description}>
+            Armed with a strong foundation in Computer Science and a flair for creativity, 
+            I take pride in delivering polished, user-friendly solutions.
+          </p>
+          <p className={styles.description}>
+            Ready to turn your ideas into something amazing? Let's connect and create magic together!
+          </p>
+        </div>
 
+        {/* Skills Section */}
+        <div className={styles.skillsSection}>
+          <h2 className={styles.sectionTitle}>Technical Expertise</h2>
+          <ul className={styles.achievementList}>
+            <li>Frontend: React, Next.js</li>
+            <li>Backend: Node.js, MongoDB</li>
+            <li>DevOps: Docker, AWS</li>
+            <li>APIs: REST, GraphQL</li>
+          </ul>
+        </div>
+
+        {/* Achievements Section */}
+        <div className={styles.achievementsSection}>
+          <h2 className={styles.sectionTitle}>Our Impact</h2>
+          <ul className={styles.achievementList}>
+            <li>1850+ Visitors</li>
+            <li>12+ Projects</li>
+            <li>425+ Feedbacks</li>
+          </ul>
+        </div>
+      </div>
     </div>
-        <ul className={styles.achievementList}>
-          <li>1850+ Visitors</li>
-          <li>12+ Freelance Projects</li>
-          <li>$400+ Earnings</li>
-          <li>425+ Positive Feedbacks</li>
-        </ul>
-    </>
   );
-}
+};
+
+export default About;

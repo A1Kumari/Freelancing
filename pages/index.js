@@ -9,13 +9,15 @@ import About from './About';
 
 export default function Home() {
   return (
-    <>
-    <HomePage/>
+    
+       <div className={styles.container}>
+       <HomePage/>
     <About/>
+    <Project/>
     <Services/>
-    {/* <Project/> */}
     <Pricing/>
     <ContactForm/>
-    </>
+       </div>
+    
   );
 }

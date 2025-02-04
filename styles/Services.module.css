@@ -1,69 +1,127 @@
-/* styles/Services.module.css */
-
 /* Container styling */
 .servicesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Individual service box styling */
-  .serviceBox {
-    position: relative;
-    width: 350px;
-    padding: 20px;
-    background: white;
-    border: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 50px;
+}
+
+/* Individual service box styling */
+.serviceBox {
+  position: relative;
+  width: 350px;
+  padding: 20px;
+  background: #e6e8eb;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serviceBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.achievementList li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #EDE8F5; /* Light text color for contrast */
+    background-color: #92A4E0; /* Primary color */
+    padding: 1rem 2rem;
+    width: 12rem;
+    height: 100px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content inside each item */
+    text-align: center; /* Center text inside each item */
+    box-shadow: 
+      rgba(112, 145, 230, 0.4) -5px 5px,
+      rgba(112, 145, 230, 0.3) -10px 10px,
+      rgba(112, 145, 230, 0.2) -15px 15px,
+      rgba(112, 145, 230, 0.1) -20px 20px,
+      rgba(112, 145, 230, 0.05) -25px 25px; /* Multi-layered shadow using secondary color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   }
   
-  .serviceBox:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  /* Hover effect for each list item */
+  .achievementList li:hover {
+    transform: scale(1.05); /* Slightly enlarge the item */
+    box-shadow: 
+      rgba(112, 145, 230, 0.6) -5px 5px,
+      rgba(112, 145, 230, 0.5) -10px 10px,
+      rgba(112, 145, 230, 0.4) -15px 15px,
+      rgba(112, 145, 230, 0.3) -20px 20px,
+      rgba(112, 145, 230, 0.2) -25px 25px; /* Enhance shadow on hover */
+    background-color: #2E3D7F; /* Darken primary color on hover */
   }
-  
-  /* Title and description styling */
-  .serviceBox h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #333;
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  .serviceBox p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
-    font-family: "Lato", sans-serif;
-  }
-  
-  /* Bottom border animation */
-  .bottomBorder {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: #556ee6; /* Primary color */
-    transition: width 0.3s ease;
-  }
-  
-  .serviceBox:hover .bottomBorder {
-    width: 80%; /* Border expands on hover */
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .servicesContainer {
+
+/* Title and description styling */
+.serviceBox h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.serviceBox p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+/* Bottom border animation */
+.bottomBorder {
+  position: absolute;
+  bottom: -5px; /* Adjusted for visibility */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #FFD700; /* Yellow underline effect */
+  transition: width 0.3s ease;
+}
+
+.serviceBox:hover .bottomBorder {
+  width: 100%; /* Border expands on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .servicesContainer {
       flex-direction: column;
       align-items: center;
-    }
   }
-  
+}
+
+
+
+.servicesHeading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.servicesHeading h2 {
+  font-size: 2.5rem;
+  color: #3D52A0;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.servicesHeading h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #FFD700;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+

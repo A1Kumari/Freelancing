@@ -12,7 +12,11 @@ function Services() {
   ];
 
   return (
-    <div className={styles.servicesContainer}>
+    <div className={styles.container}>
+      <div className={styles.servicesHeading}>
+        <h2>Our Services</h2>
+      </div>
+      <div className={styles.servicesContainer}>
       {services.map((service, index) => (
         <div className={styles.serviceBox} key={index}>
           <h3>{service.title}</h3>
@@ -20,6 +24,7 @@ function Services() {
           <div className={styles.bottomBorder}></div>
         </div>
       ))}
+      </div>
     </div>
   );
 }

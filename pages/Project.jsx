@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Project.module.css';
@@ -6,11 +6,7 @@ import { motion } from 'framer-motion';
 import useTiltEffect from '../components/cursorAnimation';
 
 function Project() {
-  const box1Ref = useTiltEffect();
-  const box2Ref = useTiltEffect();
-  const box3Ref = useTiltEffect();
-  const box4Ref = useTiltEffect();
-  const box5Ref = useTiltEffect();
+  const boxRefs = [useTiltEffect(), useTiltEffect(), useTiltEffect(), useTiltEffect(), useTiltEffect()];
 
   const fadeInVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -22,6 +18,44 @@ function Project() {
       },
     },
   };
+
+  const projects = [
+    {
+      title: 'Frontend Development',
+      description:
+        'Creating captivating and responsive UI using modern frontend technologies such as HTML, CSS, JavaScript, and frameworks like React.js.',
+      github: 'https://github.com/yourusername/frontend-project',
+      demo: 'https://frontend-demo.com',
+    },
+    {
+      title: 'Backend Development',
+      description:
+        'Building scalable and secure backend systems using frameworks like Express.js and Laravel, with robust APIs and authentication mechanisms.',
+      github: 'https://github.com/yourusername/backend-project',
+      demo: 'https://backend-demo.com',
+    },
+    {
+      title: 'Machine Learning',
+      description:
+        'Expertise in advanced techniques such as NLP and deep learning to drive strategic decision-making and optimize business processes.',
+      github: 'https://github.com/yourusername/ml-project',
+      demo: 'https://ml-demo.com',
+    },
+    {
+      title: 'Custom Solutions',
+      description:
+        'Tailored solutions to meet unique project requirements and deliver exceptional results tailored to client needs.',
+      github: 'https://github.com/yourusername/custom-solutions',
+      demo: 'https://custom-demo.com',
+    },
+    {
+      title: 'New Project',
+      description:
+        'Description for the new project or feature. Highlight unique aspects and key benefits.',
+      github: 'https://github.com/yourusername/new-project',
+      demo: 'https://newproject-demo.com',
+    },
+  ];
 
   return (
     <>
@@ -38,70 +72,28 @@ function Project() {
           My <span className={styles.highlight}>MasterPiece</span>
         </motion.h1>
         <div className={styles.gridContainer}>
-          <motion.div
-            className={`${styles.box} ${styles.box1}`}
-            initial="hidden"
-            animate="visible"
-            variants={fadeInVariants}
-            transition={{ delay: 0.2 }}
-            ref={box1Ref}
-          >
-            <h2 className={styles.heading2}>Frontend Development</h2>
-            <Image src="/image/img1.jpeg" width={400} height={250} className={styles.img} alt="Frontend Development" />
-            <p>Creating captivating and responsive UI using modern frontend technologies such as HTML, CSS, JavaScript, and frameworks like React.js.</p>
-          </motion.div>
-          <motion.div
-            className={`${styles.box} ${styles.box2}`}
-            initial="hidden"
-            animate="visible"
-            variants={fadeInVariants}
-            transition={{ delay: 0.4 }}
-            ref={box2Ref}
-          >
-            <h2 className={styles.heading2}>Backend Development</h2>
-            <Image src="/image/img2.jpeg" width={400} height={250} className={styles.img} alt="Backend Development" />
-            <p>Building scalable and secure backend systems using frameworks like Express.js and Laravel, with robust APIs and authentication mechanisms.</p>
-          </motion.div>
-          <motion.div
-            className={`${styles.box} ${styles.box3}`}
-            initial="hidden"
-            animate="visible"
-            variants={fadeInVariants}
-            transition={{ delay: 0.6 }}
-            ref={box3Ref}
-          >
-            <h2 className={styles.heading2}>Machine Learning</h2>
-            <Image src="/image/img3.jpeg" width={400} height={250} className={styles.img} alt="Machine Learning" />
-            <p>Expertise in advanced techniques such as NLP and deep learning to drive strategic decision-making and optimize business processes.</p>
-          </motion.div>
-          <motion.div
-            className={`${styles.box} ${styles.box4}`}
-            initial="hidden"
-            animate="visible"
-            variants={fadeInVariants}
-            transition={{ delay: 0.8 }}
-            ref={box4Ref}
-          >
-            <h2 className={styles.heading2}>Custom Solutions</h2>
-            <Image src="/image/img4.jpeg" width={400} height={250} className={styles.img} alt="Custom Solutions" />
-            <p>Tailored solutions to meet unique project requirements and deliver exceptional results tailored to client needs.</p>
-          </motion.div>
-          <motion.div
-            className={`${styles.box} ${styles.box5}`}
-            initial="hidden"
-            animate="visible"
-            variants={fadeInVariants}
-            transition={{ delay: 1.0 }}
-            ref={box5Ref}
-          >
-            <h2 className={styles.heading2}>New Project Box</h2>
-            <Image src="/image/img5.jpeg" width={400} height={250} className={styles.img} alt="New Project" />
-            <p>Description for the new project or feature. Highlight unique aspects and key benefits.</p>
-          </motion.div>
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className={`${styles.box} ${styles[`box${index + 1}`]}`}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInVariants}
+              transition={{ delay: 0.2 * (index + 1) }}
+              ref={boxRefs[index]}
+            >
+              <h2 className={styles.heading2}>{project.title}</h2>
+              <p>{project.description}</p>
+              <div className={styles.links}>
+                <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href={project.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Project
+export default Project;

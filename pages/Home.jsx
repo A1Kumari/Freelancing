@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import styles from "../styles/HomePage.module.css";
+import Heroimg from "../public/assests/heroimg.jpg";
+import Image from 'next/image';
 
 function HomePage() {
   const containerRef = useRef(null);
@@ -36,14 +38,18 @@ function HomePage() {
         
         <div className={styles.blueSection}>
           <div className={styles.introContent}>
-            <h1 className={styles.coolHeading}>Hire me for <span className={styles.highlight}>Freelancing</span></h1>
-            <p className={styles.introText}>Explore our amazing features and services.</p>
+            <h1 className={styles.coolHeading}>Transform Your Ideas into Reality with<span className={styles.highlight}>Expert Freelancing</span></h1>
+            <p className={styles.introText}>Hire skilled professionals to bring your projects to life. Let's build something amazing together!</p>
+          </div>
+          <div className={styles.rightContent}>
             <div className={styles.imagesSection}>
+              <Image src={Heroimg} width={500} height={500} alt="Picture of the author" className={styles.image} />
             </div>
             <button className={styles.arrowButton} onClick={handleArrowClick}>
               Get Started
             </button>
           </div>
+          
         </div>
         
       </div>
